@@ -11,7 +11,7 @@ class Core {
     public function __construct() {
         $url = $this->getUrl();
         var_dump($url);
-        
+
         // look in controllers for first value
         if (is_array($url) && file_exists('./controller/' . ucwords($url[0]). '.php')) {
             // if existe then site as controller
@@ -41,24 +41,28 @@ class Core {
 
         // call a callback with array of params
         call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
+        
     }
 
     public function getUrl() {
-        // if (isset($_GET['url'])) {
-        //     $url = rtrim($_GET['url'], '/');
-        //     $url = filter_var($url, FILTER_SANITIZE_URL);
-        //     $url = explode('/', $url);
-        //     return $url;
-        // }
-        if(isset($_SERVER['REQUEST_URI'])){
+        
+        if (isset($_GET['url'])) {
 
-            $url = rtrim($_SERVER['REQUEST_URI'] , '/');
-            $url = filter_var($url, FILTER_SANITIZE_URL); // removes all illegal characters in a url 
+            $url = rtrim($_GET['url'], '/');
+            $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
+            return $url;
+
+        }
+        // if(isset($_SERVER['REQUEST_URI'])){
+
+        //     $url = rtrim($_SERVER['REQUEST_URI'] , '/');
+        //     $url = filter_var($url, FILTER_SANITIZE_URL); // removes all illegal characters in a url 
+        //     $url = explode('/', $url);
             
 
-            return $url;
-        }
+        //     return $url;
+        // }
 
     }
         

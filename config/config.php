@@ -13,8 +13,8 @@
 
     // URL root 
 
-    define('URLROOT' , 'http://localhost/E-commerce-website');
+    define('URLROOT' , 'http://localhost/GlowGuru-fullStack-');
 
     //Site name 
 
-    define('SITENAME', 'Electro Maroc');
+    // define('SITENAME', 'Electro Maroc');
