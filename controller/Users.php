@@ -68,11 +68,14 @@
         $_SESSION['Email'] = $user->admin_email;
 
         if($_SESSION['Email'] == "Rabie@gmail.com"){
-            $this->view("index");
+
+            redirect("/index");
+
+        }else {
+            
+            echo "done!";
         }
 
-        $this->view("index");
-        exit();
     }
 
 }

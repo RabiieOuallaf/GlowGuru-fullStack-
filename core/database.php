@@ -28,8 +28,10 @@
                 $this->dbh = new PDO($dsn, $this->user, $this->pwd, $options);
 
             }catch(PDOException $e){
+
                 $this->erorr = $e->getMessage();
                 echo $this->erorr;
+                
             }
 
         }

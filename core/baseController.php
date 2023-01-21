@@ -27,9 +27,9 @@
         public function view($view, $data = []){ // $data to be able to pass the data from the controller 
             // Check if file exsits 
 
-            if(file_exists("../view/".$view.".php")){
+            if(file_exists("./view/".$view.".php")){
 
-                require_once "../view/".$view.".php";
+                require_once "./view/".$view.".php";
 
             }else {
                 die("View does not exsit!");
