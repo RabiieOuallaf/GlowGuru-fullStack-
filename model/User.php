@@ -31,24 +31,5 @@
             }
         }
 
-        // Find user by email 
-
-        public function findUserByEmail($email) {
-
-            $this->db->query("SELECT * FROM admin WHERE admin_email = :email");
-            $this->db->bind(':email', $email);
-
-            $row = $this->db->single();
-
-            // Check rows 
-
-            if($this->db->rowCount() > 0){
-
-                return $row;
-
-            }else {
-                return false;
-            }
-        }
 
     }

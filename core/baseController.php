@@ -10,7 +10,7 @@
 
         public function model($model){
             // Require model file 
-            require_once "../model/".$model.".php";
+            require_once "./model/".$model.".php";
 
             // Instaitate model 
             return new $model();

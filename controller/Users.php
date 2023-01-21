@@ -5,49 +5,44 @@
 
     class Users extends BaseController{
 
-        private $userModel;
+        protected $userModel;
 
-        public function __construct(){
+
+        public function __construct(){            
 
             $this->userModel = $this->model('User');
         }
 
+    
+        // Filtring the data 
 
+        
         public function Login(){
-            
-            // Filtring the data 
-
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 
-            $data = [
 
-                "Email" => $_POST['Email'],
-                "Password" => $_POST['Password']
-
-            ];
-                
-            // Check if the request method is post 
-
-            if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-                // Filtring the data 
+            if($_SERVER["REQUEST_URI"] == "POST"){
 
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-
+    
+    
                 $data = [
-
+    
                     "Email" => $_POST['Email'],
                     "Password" => $_POST['Password']
     
                 ];
+                
+            // Check if the request method is post 
+
+ 
+
 
                 // Handling unwanted cases 
 
-                if( empty($data["Email"]) || empty($data["Password"])){
+                if(empty($data["Email"]) || empty($data["Password"])){
 
-                    header("location: /index.php");
+                    header("location: localhost:8080");
                     die("Please fill all inputs");
     
                 }
@@ -65,34 +60,26 @@
                 }else {
                     die("User dose not exsits!");
                 }
-    
-                
 
-                
-
+            }
+            
+            
             
 
-        }
+        
 
         
     }
 
     public function createSession($user){
 
-        $_SESSION['Email'] = $user->admin_email;
-        header("location: localhost:8080/index");
+        $_SESSION['Email'] = $user->email;
+        $this->view('login');
         exit();
     }
 
 }
 
-    $init = new Users;
 
-    switch($_POST['type']){
 
-        case 'login':
 
-            $init->Login();
-            break;
-
-    }

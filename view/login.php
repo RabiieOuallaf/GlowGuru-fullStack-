@@ -20,10 +20,9 @@
 
             <h2 class="text-2.8xl font-bold text-center font-mono my-10">Welcome back, Admin 👋🏻</h2>
             <p class="text-xs">Login to access the dahsboard</p>
-            <form class="flex flex-col px-8" action="<?= URLROOT .'/controller/Users.php' ?>" method="POST">
+            <form action="<?= URLROOT ?>/controller/Users.php" method="POST" class="flex flex-col px-8">
 
-                <input type="hidden" name='type' value="login">
-
+                <input type="hidden" name="type" value="login">
                 <input type="text" name="Email" placeholder="Email" class="bg-transparent border-b-2"  required>
                 <input type="password"  name="Password" placeholder="Password" class="bg-transparent border-b-2" required>
                 <input type="submit" class="text-center rounded-full bg-black text-white cursor-pointer" value="login">

@@ -13,7 +13,7 @@
 
     // URL root 
 
-    define('URLROOT' , 'http://localhost/GlowGuru-fullStack-');
+    define('URLROOT' ,  "http://localhost:8080");
 
     //Site name 
 
