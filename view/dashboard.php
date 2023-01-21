@@ -26,7 +26,7 @@
                         <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
                     </li>
                     <li>
-                        <a href="<?= URLROOT ?>" class="flex items-center mr-4 hover:text-blue-100">
+                        <a href="<?= URLROOT .'/controller/LogoutHandler.php"';?> class="flex items-center mr-4 hover:text-blue-100">
                             <span class="inline-flex mr-1">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             </span>

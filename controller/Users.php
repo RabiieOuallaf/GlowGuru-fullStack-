@@ -71,13 +71,27 @@
 
         if($_SESSION['Email'] == "Rabie@gmail.com"){
 
-            redirect("/index");
+            redirect("/dashboard");
 
         }else {
             
-            echo "done!";
+            redirect("/index");
         }
 
+    }
+
+
+    
+    public function logOut(){
+
+        session_start();
+        session_unset();
+        session_destroy();
+
+        redirect("/index");
+
+        
+        exit();
     }
 
 }

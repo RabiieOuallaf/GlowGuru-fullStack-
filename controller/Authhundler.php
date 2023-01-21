@@ -1,9 +1,14 @@
 <?php 
 
+
     require_once './Users.php';
 
     $Login = new Users();
 
-    $Login->Login();
+    if(!$_SESSION){
+
+        $Login->Login();
+
+    }
 
     
