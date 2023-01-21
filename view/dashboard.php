@@ -77,18 +77,7 @@
                 <span>Products -</span>
                 <div></div>
             </div>
-            <div class="w-52 h-32 bg-gradient-to-r from-cyan-400 to-cyan-700 rounded-lg p-2">
-                <span>Clients -</span>
-                <div></div>
-            </div>
-            <div class="w-52 h-32 bg-gradient-to-r from-green-400 to-green-700 rounded-lg p-2">
-                <span>Orders -</span>
-                <div></div>
-            </div>
-            <div class="w-52 h-32 bg-gradient-to-r from-yellow-400 to-yellow-700 rounded-lg p-2">
-                <span>Categories -</span>
-                <div></div>
-            </div>
+            
 
         </div>
     <!-- ./body -->
