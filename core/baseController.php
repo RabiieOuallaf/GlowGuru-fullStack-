@@ -9,9 +9,15 @@
         // Load models 
 
         public function model($model){
-            // Require model file 
-            require_once "./model/".$model.".php";
+            // Check if the file exists and Require it 
+            if(file_exists("../model/User.php")){
 
+                require_once "../model/User.php";
+
+            }else {
+                die("model does not exsit!");
+            }
+            
             // Instaitate model 
             return new $model();
         }
@@ -21,9 +27,9 @@
         public function view($view, $data = []){ // $data to be able to pass the data from the controller 
             // Check if file exsits 
 
-            if(file_exists("./view/".$view.".php")){
+            if(file_exists("../view/".$view.".php")){
 
-                require_once "./view/".$view.".php";
+                require_once "../view/".$view.".php";
 
             }else {
                 die("View does not exsit!");
