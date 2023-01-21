@@ -1,10 +1,27 @@
 body {
-    background-image: url('../assets/images/nails-noBg.png');
+    background-image: url('../images/nails-noBg.png');
+    background-color: #F4EEE9;
+    cursor: none;
     background-repeat: no-repeat;
     background-position: right;
     background-position-y: 5px ;
     background-size: 25%;
 }
+.product img 
+{
+    width: 50%;
+}
+.product button 
+{
+    width: 30%;
+}
+.products {
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+} 
 #cursor
   {
       width: 20px;

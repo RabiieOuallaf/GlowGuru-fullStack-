@@ -4,10 +4,11 @@ module.exports = {
     theme: {
     extend: {},
     fontSize: {
-      '5xl': '4.4rem',
       '3xl': '3rem',
+      '5xl': '4.4rem',
       '2xl': '2.8rem',
-      'xs': '1rem'
+      'xs': '1rem',
+      
     },
     animation: {
       'spin': 'spin 13s linear infinite',
