@@ -35,7 +35,8 @@
         <div class="nav-options">
 
             <i class="fa-solid fa-cart-shopping" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i>
-            <i class="fa-solid fa-user" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i>
+            <a href="<?= URLROOT .'/view/login.php'?>"><i class="fa-solid fa-user" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i></a>
+
         </div>
 
     </section>
