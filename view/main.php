@@ -7,7 +7,7 @@
     <title>GlowGuru</title>
     <script src="https://kit.fontawesome.com/28113ccba1.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="<?= URLROOT ?>/view/assets/styles/style.css" rel="stylesheet">
+    <link href="<?= URLROOT ?>/view/assets/styles/style.css" rel="stylesheet" />
     <link href="<?= URLROOT ?>/view/assets/styles/main.css" rel="stylesheet" />
 
 </head>
@@ -35,7 +35,7 @@
         <div class="nav-options">
 
             <i class="fa-solid fa-cart-shopping" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i>
-            <a href="<?= URLROOT .'/view/login.php'?>"><i class="fa-solid fa-user" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i></a>
+            <a href="<?= URLROOT .'/login'?>"><i class="fa-solid fa-user" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i></a>
 
         </div>
 

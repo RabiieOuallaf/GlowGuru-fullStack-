@@ -14,6 +14,10 @@
             $this->view('main');
 
         }
+
+        public function login() {
+            $this->view('login');
+        }
         
 
     }

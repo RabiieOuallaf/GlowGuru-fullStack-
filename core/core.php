@@ -46,23 +46,23 @@ class Core {
 
     public function getUrl() {
         
-        if (isset($_GET['url'])) {
+        // if (isset($_GET['url'])) {
 
-            $url = rtrim($_GET['url'], '/');
-            $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = explode('/', $url);
-            return $url;
-
-        }
-        // if(isset($_SERVER['REQUEST_URI'])){
-
-        //     $url = rtrim($_SERVER['REQUEST_URI'] , '/');
-        //     $url = filter_var($url, FILTER_SANITIZE_URL); // removes all illegal characters in a url 
+        //     $url = rtrim($_GET['url'], '/');
+        //     $url = filter_var($url, FILTER_SANITIZE_URL);
         //     $url = explode('/', $url);
+        //     return $url;
+
+        // }
+        if(isset($_SERVER['REQUEST_URI'])){
+
+            $url = rtrim($_SERVER['REQUEST_URI'] , '/');
+            $url = filter_var($url, FILTER_SANITIZE_URL); // removes all illegal characters in a url 
+            $url = explode('/', $url);
             
 
-        //     return $url;
-        // }
+            return $url;
+        }
 
     }
         

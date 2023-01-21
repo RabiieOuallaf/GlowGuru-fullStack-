@@ -1,0 +1,25 @@
+body 
+{
+    background-color: grey ;
+}
+.container
+{
+    width: 80%;
+    height: 590px;
+}
+.login 
+{
+    height: 800px;
+    background-color: rgb(172, 172, 172) ;
+    background-image: none ;
+
+}
+input 
+{
+    margin: 1rem;
+    width: 17.7rem;
+}
+input[type=submit]
+{
+    padding: 0.4rem
+}
