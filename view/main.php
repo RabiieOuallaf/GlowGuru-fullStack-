@@ -35,8 +35,8 @@
         <div class="nav-options">
 
             <i class="fa-solid fa-cart-shopping" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i>
-            <a href="<?= URLROOT .'/login'?>"><i class="fa-solid fa-user" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i></a>
-
+            <a href="/login"><i class="fa-solid fa-user" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i></a>
+            <?php var_dump($_SESSION)?>
         </div>
 
     </section>
