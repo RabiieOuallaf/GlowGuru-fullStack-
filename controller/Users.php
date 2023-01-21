@@ -65,6 +65,8 @@
 
     public function createSession($user){
 
+        session_start();
+
         $_SESSION['Email'] = $user->admin_email;
 
         if($_SESSION['Email'] == "Rabie@gmail.com"){
