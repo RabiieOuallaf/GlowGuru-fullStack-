@@ -28,6 +28,20 @@
                         <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
                     </li>
                     <li>
+
+                        <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" id="pop-up">
+
+                            <span class="inline-flex mr-1">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </span>
+                                Add Product
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
+                    </li>
+                    <li>
                         <a href="<?= URLROOT .'/controller/LogoutHandler.php"';?> class="flex items-center mr-4 hover:text-blue-100">
                             <span class="inline-flex mr-1">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -58,11 +72,11 @@
                     </a>
                     </li>
                     <li>
-                        <div id="pop-up" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                        <div class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6" onclick="location.href='/dashboardTable'">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-sharp fa-solid fa-boxes-stacked"></i>
                             </span>
-                            <span class="ml-2 text-sm tracking-wide truncate">Products</span>
+                            <span class="ml-2 text-sm tracking-wide truncate">Products page</span>
                         </div>
                     </li>
                     
@@ -98,11 +112,7 @@
 
         </div>
 
-        <div class="product-form">
-            <form action="">
 
-            </form>
-        </div>
     <!-- ./body -->
     </div>
 

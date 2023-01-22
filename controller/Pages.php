@@ -16,11 +16,20 @@
         }
 
         public function login() {
+
             $this->view('login');
+
         }
 
         public function dashboard(){
+
             $this->view("dashboard");
+
+        }
+        public function dashboardTable(){
+
+            $this->view("dashboardTable");
+            
         }
         
 
