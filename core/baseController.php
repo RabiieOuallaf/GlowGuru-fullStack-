@@ -10,9 +10,9 @@
 
         public function model($model){
             // Check if the file exists and Require it 
-            if(file_exists("../model/User.php")){
+            if(file_exists("../model/".$model.".php")){
 
-                require_once "../model/User.php";
+                require_once "../model/".$model.".php";
 
             }else {
                 die("model does not exsit!");

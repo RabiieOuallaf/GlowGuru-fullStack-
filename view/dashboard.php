@@ -84,10 +84,10 @@
 
                 <form action="<?= URLROOT ?>/controller/ProductsHandler.php"  method="POST" class="flex flex-col justify-cente bg-white w-96 h-64 px-10">
 
-                    <input type="text" name="productName" placeholder="product name : " class="my-3 bg-transparent border-b-2">
-                    <input type="text" name="productPrice" placeholder="product price :" class="my-3 bg-transparent border-b-2">
-                    <input type="text" name="productDescription" placeholder="product description : " class="my-3 bg-transparent border-b-2">
-                    <input type="text" name="productImage" placeholder="product image : " class="my-3 bg-transparent border-b-2">
+                    <input type="text" name="productName" placeholder="product name : " class="my-3 bg-transparent border-b-2 text-black">
+                    <input type="number" name="productPrice" placeholder="product price :" class="my-3 bg-transparent border-b-2 text-black">
+                    <input type="text" name="productDescription" placeholder="product description : " class="my-3 bg-transparent border-b-2 text-black">
+                    <input type="text" name="productImage" placeholder="product image : " class="my-3 bg-transparent border-b-2 text-black">
                     <input type="submit" class="text-center rounded-full bg-black text-white cursor-pointer">
 
 

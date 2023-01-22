@@ -33,12 +33,17 @@
             $productAdded = $this->productModel->AddProduct($data["productName"],$data["productPrice"],$data["productDescription"],$data["productImage"]);
 
             if($productAdded){
+
                 redirect("/dashboard");
+
             }else{
+                
                 echo "t2kd tani :) ";
             }
 
 
 
         }
+
+        
     }
