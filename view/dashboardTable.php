@@ -117,6 +117,10 @@
                     <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
                         <thead class="bg-gray-100 dark:bg-gray-700">
                             <tr>
+
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Product ID
+                                </th>
                                 
                                 <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                     Product Name
@@ -133,12 +137,14 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                            
                             <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
 
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple Imac 27"</td>
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">$1999</td>
                                 <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline mx-5">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-red-500 hover:underline">Remove</a>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -146,7 +152,9 @@
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple MacBook Pro 17"</td>
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">$2999</td>
                                 <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline mx-5">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-red-500 hover:underline">Remove</a>
+
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -154,7 +162,10 @@
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">iPhone 13 Pro</td>
                                  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">$999</td>
                                 <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+
+                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline mx-5">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-red-500 hover:underline">Remove</a>
+
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -162,7 +173,9 @@
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple Magic Mouse 2</td>
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">$99</td>
                                 <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline mx-5">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-red-500 hover:underline">Remove</a>
+
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -170,7 +183,9 @@
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple Watch Series 7</td>
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">$599</td>
                                 <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline mx-5">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-red-500 hover:underline">Remove</a>
+
                                 </td>
                             </tr>
                         </tbody>
