@@ -37,13 +37,32 @@
                 redirect("/dashboard");
 
             }else{
-                
+
                 echo "t2kd tani :) ";
             }
 
 
 
         }
+
+        public function updateProduct() {
+
+            // Fetch data
+            $productId = (int)trim($_POST['ProductID']);
+            $productName = trim($_POST['ProductName']);
+            $ProductPrice = trim($_POST['ProductPrice']);
+            $ProductDescription = trim($_POST['ProductDescription']);
+            $ProductImage = trim($_POST['ProductImage']);
+
+
+
+            if($this->productModel->updateProduct($productId,$productName,$ProductPrice,$ProductDescription,$ProductImage)){
+                redirect("/dashbaord");
+            }else {
+                die('something went wrong tani');
+            }
+
+       }
 
         
     }

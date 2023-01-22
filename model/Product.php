@@ -13,7 +13,7 @@
         }
 
         public function AddProduct($Pname, $Pprice, $Pdescription, $Pimage) {
-            
+
             $sql = "INSERT INTO products(product_name,product_price,product_description,product_image) VALUES (:productName, :productPrice, :productDescription, :productImage)";
             $this->db->query($sql);
             $this->db->bind(":productName", $Pname);
@@ -32,6 +32,30 @@
                 return false;
 
             }
+        }
+
+        
+        public function updateProduct($id, $name, $price, $description, $picture){
+
+            $this->db->query("UPDATE products SET product_name = :name ,product_price = :price, product_description = :description, product_image = :picture WHERE product_id = :id" );
+
+            $this->db->bind(":id", $id);
+
+            $this->db->bind(":name" , $name);
+
+            $this->db->bind(":price" , $price);
+
+            $this->db->bind(":description" , $description);
+            
+            $this->db->bind(":picture" , $picture);
+
+            if($this->db->execute()){
+                return true;
+            }else {
+                return false;
+            }
+
+            
         }
         
     }
