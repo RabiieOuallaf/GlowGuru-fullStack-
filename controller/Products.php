@@ -64,5 +64,17 @@
 
        }
 
+       public function deleteProduct() { 
+
+        // Fetch data
+            $productId = (int)trim($_POST['productid']);
+
+            if(!$this->productModel->deleteProduct($productId)){
+                redirect("/dashbaord.php");
+            }else {
+                die('something went wrong akha');
+            }
+        }
+
         
     }

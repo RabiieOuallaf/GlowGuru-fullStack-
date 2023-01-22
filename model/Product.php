@@ -57,5 +57,19 @@
 
             
         }
+
+        public function deleteProduct($id) {
+            $delete = $this->db->query("DELETE FROM products WHERE product_id = :id");
+            $this->db->bind(":id", $id);
+            $this->db->execute();
+            
+            if($delete){
+                return true;
+            }else {
+                return false;
+            }
+            
+
+        }
         
     }
