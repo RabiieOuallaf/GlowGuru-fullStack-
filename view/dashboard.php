@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="min-h-screen grid grid-cols-[auto_1fr] antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+    <div class="min-h-screen grid grid-cols-[auto_1fr] antialiased bg-white dark:bg-gray-700 text-black dark:text-white w-[100%]">
 
         <!-- Header -->
         <div class="fixed w-full flex items-center justify-between h-14 text-white z-20 bg-gray-800">
@@ -20,7 +20,9 @@
             <div class="flex justify-between items-center h-full header-right">
                 <ul class="flex items-center">
                     <li class="rounded-full border-2 border-blue-500 w-7 h-7 overflow-hidden">
-                        <img src="" alt="">
+                        
+                        <img src="<?= URLROOT . '/view/assets/images/admin.jpg' ?>" alt="admin picture">
+
                     </li>
                     <li>
                         <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
@@ -56,12 +58,12 @@
                     </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                        <div id="pop-up" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-sharp fa-solid fa-boxes-stacked"></i>
                             </span>
                             <span class="ml-2 text-sm tracking-wide truncate">Products</span>
-                        </a>
+                        </div>
                     </li>
                     
                 </ul>
@@ -77,10 +79,33 @@
                 <span>Products -</span>
                 <div></div>
             </div>
+
+            <div class="product-form flex justify-center items-center" style="display: none;" id="product-form">
+
+                <form action="<?= URLROOT ?>/controller/ProductsHandler.php"  method="POST" class="flex flex-col justify-cente bg-white w-96 h-64 px-10">
+
+                    <input type="text" name="productName" placeholder="product name : " class="my-3 bg-transparent border-b-2">
+                    <input type="text" name="productPrice" placeholder="product price :" class="my-3 bg-transparent border-b-2">
+                    <input type="text" name="productDescription" placeholder="product description : " class="my-3 bg-transparent border-b-2">
+                    <input type="text" name="productImage" placeholder="product image : " class="my-3 bg-transparent border-b-2">
+                    <input type="submit" class="text-center rounded-full bg-black text-white cursor-pointer">
+
+
+                </form>
+
+            </div>
             
 
         </div>
+
+        <div class="product-form">
+            <form action="">
+
+            </form>
+        </div>
     <!-- ./body -->
     </div>
+
+    <script src="<?= URLROOT ?>/view/assets/scripts/dashboard.js"></script>
 </body>
 </html>

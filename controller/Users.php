@@ -14,7 +14,6 @@
         }
 
     
-        // Filtring the data 
 
         
         public function Login(){
@@ -40,7 +39,7 @@
 
             if(empty($data["Email"]) || empty($data["Password"])){
 
-                header("location: localhost:8080");
+                redirect("/index");
                 die("Please fill all inputs");
 
             }
