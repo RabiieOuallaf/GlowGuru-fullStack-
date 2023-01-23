@@ -29,36 +29,69 @@
 
         public function addProduct() {
 
-            $data = [
+            // $data = [
 
-                "productName" => $_POST['productName'],
-                "productPrice" => $_POST['productPrice'],
-                "productDescription" => $_POST['productDescription'],
-                "productImage" => $_POST['productImage']
+            //     "productName" => $_POST['productName'],
+            //     "productPrice" => $_POST['productPrice'],
+            //     "productDescription" => $_POST['productDescription'],
+            //     "productImage" => $_POST['productImage']
 
-            ];
+            // ];
 
-            if(empty($data["productName"]) || empty($data["productPrice"]) || empty($data["productDescription"] || empty($data["productImage"]))){
+            // if(empty($data["productName"]) || empty($data["productPrice"]) || empty($data["productDescription"] || empty($data["productImage"]))){
 
-                redirect("/dashbaord");
-                die("Please fill all inputs");
+            //     redirect("/dashbaord");
+            //     die("Please fill all inputs");
+
+            // }
+
+            // $productAdded = $this->productModel->AddProduct($data["productName"],$data["productPrice"],$data["productDescription"],$data["productImage"]);
+
+            // if($productAdded){
+
+            //     redirect("/dashboard");
+
+            // }else{
+
+            //     echo "t2kd tani :) ";
+            // }
+
+
+            $count = count($_POST['productName']);
+
+            for ($i = 0; $i < $count; $i++) {
+                // sanitize post data
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                // init data
+
+                $data = [
+
+                    "productName" => $_POST['productName'][$i],
+                    "productPrice" => $_POST['productPrice'][$i],
+                    "productDescription" => $_POST['productDescription'][$i],
+                    "productImage" => $_POST['productImage'][$i]
+
+                ];
+
+                $addPoruct = $this->productModel->addProduct($data);
+
+                if ($addPoruct) {
+                    // redirect to product page
+                    redirect('/dashboard');
+                } else {
+                    die('ops');
+                }
+                
+
+
 
             }
 
-            $productAdded = $this->productModel->AddProduct($data["productName"],$data["productPrice"],$data["productDescription"],$data["productImage"]);
-
-            if($productAdded){
-
-                redirect("/dashboard");
-
-            }else{
-
-                echo "t2kd tani :) ";
-            }
+        
 
 
 
-        }
+    }
 
         public function updateProduct() {
 
@@ -98,22 +131,34 @@
     
         }
 
+        public function countPorducts(){
+            
+            return $this->productModel->countProducts();
+
+        }
+
         
     }
 
     $init = new Products;
 
-    switch($_POST["type"]){
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-        case "add": 
+        switch($_POST["type"]){
 
-            $init->addProduct();
-            break;
-        case "delete":
-            $init->deleteProduct();
-            break;
+            case "add": 
+    
+                $init->addProduct();
+                break;
+            case "delete":
+                $init->deleteProduct();
+                break;
+    
+            case 'update':
+                $init->updateProduct();
+                break;
+        }
 
-        case 'update':
-            $init->updateProduct();
-            break;
     }
+
+    

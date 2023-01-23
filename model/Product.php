@@ -23,14 +23,14 @@
             $this->db = new Database();
         }
 
-        public function AddProduct($Pname, $Pprice, $Pdescription, $Pimage) {
+        public function AddProduct($data) {
 
             $sql = "INSERT INTO products(product_name,product_price,product_description,product_image) VALUES (:productName, :productPrice, :productDescription, :productImage)";
             $this->db->query($sql);
-            $this->db->bind(":productName", $Pname);
-            $this->db->bind(":productPrice", $Pprice);
-            $this->db->bind(":productDescription", $Pdescription);
-            $this->db->bind(":productImage", $Pimage);
+            $this->db->bind(":productName", $data["productName"]);
+            $this->db->bind(":productPrice", $data["productPrice"]);
+            $this->db->bind(":productDescription", $data["productDescription"]);
+            $this->db->bind(":productImage", $data["productImage"]);
 
             $row = $this->db->execute();
 
@@ -89,6 +89,16 @@
 
             $sql = "SELECT * FROM products";
             return $this->db->multiple($sql);
+
+        }
+
+        public function countProducts(){
+
+            $sql = "SELECT * FROM products;";
+            $this->db->query($sql);
+            $this->db->execute();
+            return $this->db->rowCount();
+            
 
         }
         

@@ -30,6 +30,10 @@
         public function updatePage() {
             $this->view("updatePage");
         }
+
+        public function addPage(){
+            $this->view("addPage");
+        }
         
         
 
