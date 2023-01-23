@@ -39,7 +39,7 @@
 
             if(empty($data["Email"]) || empty($data["Password"])){
 
-                redirect("/index");
+                redirect("/main");
                 die("Please fill all inputs");
 
             }
@@ -74,7 +74,7 @@
 
         }else {
             
-            redirect("/index");
+            redirect("/main");
         }
 
     }

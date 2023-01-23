@@ -1,14 +1,29 @@
 <?php 
 
-    require_once "../core/baseController.php";
+    if(file_exists("../core/baseController.php")){
+        
+        require_once "../core/baseController.php";
 
+    }else {
+        require_once "core/baseController.php";
+
+    }
+
+    if(file_exists("../model/Product.php")){
+        
+        require_once "../model/Product.php";
+
+    }else {
+        require_once "model/Product.php";
+
+    }
     class Products extends BaseController {
 
         protected $productModel;
 
         public function __construct() {
 
-            $this->productModel = $this->model("Product");
+            $this->productModel = new Product();
 
         }
 
@@ -57,7 +72,6 @@
 
 
             if($this->productModel->updateProduct($productId,$productName,$ProductPrice,$ProductDescription,$ProductImage)){
-                redirect("/dashbaord");
             }else {
                 die('something went wrong tani');
             }
@@ -70,11 +84,22 @@
             $productId = (int)trim($_POST['productid']);
 
             if(!$this->productModel->deleteProduct($productId)){
-                redirect("/dashbaord.php");
+                redirect("/dashbaord");
             }else {
                 die('something went wrong akha');
             }
         }
 
+        public function displayProducts() {
+
+            $this->productModel = new Product();
+            return $this->productModel->DisplayProducts();
+    
+        }
+
         
     }
+
+    $init = new Products();
+
+    $init->addProduct();

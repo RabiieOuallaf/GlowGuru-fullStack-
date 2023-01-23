@@ -1,3 +1,12 @@
+<?php 
+    require_once "controller/Products.php";
+        
+    $init = new Products();
+
+    $Products = $init->displayProducts();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,7 +105,7 @@
 
             <div class="product-form flex justify-center items-center" style="display: none;" id="product-form">
 
-                <form action="<?= URLROOT ?>/controller/ProductsHandler.php"  method="POST" class="flex flex-col justify-cente bg-white w-96 h-64 px-10">
+                <form action="<?= URLROOT ?>/controller/Products.php"  method="POST" class="flex flex-col justify-cente bg-white w-96 h-64 px-10">
 
                     <input type="text" name="productName" placeholder="product name : " class="my-3 bg-transparent border-b-2 text-black">
                     <input type="number" name="productPrice" placeholder="product price :" class="my-3 bg-transparent border-b-2 text-black">
@@ -108,6 +117,84 @@
                 </form>
 
             </div>
+
+            <div class="max-w-2xl mx-auto">
+
+        <div class="flex flex-col">
+        <div class="overflow-x-auto shadow-md sm:rounded-lg">
+            <div class="inline-block min-w-full align-middle">
+                <div class="overflow-hidden ">
+                    <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
+                        <thead class="bg-gray-100 dark:bg-gray-700">
+                            <tr>
+
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Product ID
+                                </th>
+                                
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Product Name
+                                </th>
+
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Price
+                                </th>
+
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Description
+                                </th>
+
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Image
+                                </th>
+
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Actions
+                                </th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+
+                        <?php forEach($Products as $Product ){ ?>
+
+                            <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><?= $Product["product_id"]?></td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><?= $Product["product_name"]?></td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><?= $Product["product_price"]?></td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><?= $Product["product_description"]?></td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><img src="<?= $Product["product_image"]?>" alt="product image"/></td>
+                                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline mx-5">Edit</a>
+                                    <a href="#" class="text-blue-600 dark:text-red-500 hover:underline">Remove</a>
+                                </td>
+                                
+                            </tr>
+                            <?php }
+                            
+
+                        
+
+                        ?>
+                            
+                            
+                        
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        </div>
+            
+            
+
+        </div>
             
 
         </div>

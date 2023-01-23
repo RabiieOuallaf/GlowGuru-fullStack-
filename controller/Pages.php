@@ -26,11 +26,7 @@
             $this->view("dashboard");
 
         }
-        public function dashboardTable(){
-
-            $this->view("dashboardTable");
-            
-        }
+        
         
 
     }

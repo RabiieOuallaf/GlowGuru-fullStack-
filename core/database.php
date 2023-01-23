@@ -91,6 +91,14 @@
             return $this->stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
+        public function multiple($query){
+
+            $this->stmt = $this->dbh->prepare($query);
+            $this->execute();
+            return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+        }
 
         public function single() {
 

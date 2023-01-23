@@ -1,6 +1,6 @@
 <?php 
 
-    require_once "./bootstrap.php";
+    require_once "./core/core.php";
     
     // init core library 
 

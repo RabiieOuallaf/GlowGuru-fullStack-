@@ -1,8 +1,19 @@
 <?php 
 
-    require_once '../core/database.php';
-    require_once '../config/config.php';
-    require_once '../helpers/url_helpers.php';
+    if(file_exists("../core/database.php")){
+        require_once '../core/database.php';
+        require_once '../config/config.php';
+        require_once '../helpers/url_helpers.php';
+        require_once "../core/database.php";
+    }else {
+        require_once 'core/database.php';
+        require_once 'config/config.php';
+        require_once 'helpers/url_helpers.php';
+        require_once "core/database.php";
+    } 
+
+    
+
 
     class Product{
 
@@ -69,6 +80,13 @@
                 return false;
             }
             
+
+        }
+
+        public function DisplayProducts(){
+
+            $sql = "SELECT * FROM products";
+            return $this->db->multiple($sql);
 
         }
         

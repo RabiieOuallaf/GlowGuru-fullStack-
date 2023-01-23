@@ -2,6 +2,8 @@
 
 // create url and load core controller
 // URL FORMAT - /controller/method/params
+
+include_once "helpers/session_helper.php"; 
 class Core {
 
     protected $currentController = 'Pages';
