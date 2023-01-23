@@ -32,7 +32,12 @@
         }
 
         public function addPage(){
+
             $this->view("addPage");
+
+        }
+        public function shop() {
+            $this->view("shop");
         }
         
         
