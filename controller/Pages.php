@@ -26,6 +26,10 @@
             $this->view("dashboard");
 
         }
+
+        public function updatePage() {
+            $this->view("updatePage");
+        }
         
         
 

@@ -1,7 +1,7 @@
 <?php 
-    require_once "controller/Products.php";
+    include_once "controller/Products.php";
         
-    $init = new Products();
+    $init = new Products;
 
     $Products = $init->displayProducts();
 
@@ -37,7 +37,6 @@
                         <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
                     </li>
                     <li>
-
                         <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" id="pop-up">
 
                             <span class="inline-flex mr-1">
@@ -46,6 +45,19 @@
                                 Add Product
                         </div>
 
+                    </li>
+                    <li>
+                        <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
+                    </li>
+                    
+                    <li>
+                        <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='<?= URLROOT ?>/updatePage'">
+
+                            <span class="inline-flex mr-1">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </span>
+                                Update Product
+                            </div>
                     </li>
                     <li>
                         <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
@@ -80,14 +92,7 @@
                         <span class="ml-2 text-sm tracking-wide truncate">Statistiques</span>
                     </a>
                     </li>
-                    <li>
-                        <div class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6" onclick="location.href='/dashboardTable'">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <i class="fa-sharp fa-solid fa-boxes-stacked"></i>
-                            </span>
-                            <span class="ml-2 text-sm tracking-wide truncate">Products page</span>
-                        </div>
-                    </li>
+
                     
                 </ul>
                 <p class="mb-14 px-5 py-3 hidden md:block text-center text-xs">Copyright @2023 By Rabie Ouallaf</p>
@@ -98,15 +103,15 @@
         <!-- body -->
         <div class="mt-24 h-full flex flex-wrap justify-around max-sm:flex-col max-sm:items-center col-start-2 col-span-2">
 
-            <div class="w-52 h-32 bg-gradient-to-r from-red-400 to-red-700 rounded-lg p-2">
-                <span>Products -</span>
+            <div class="w-52 h-32 bg-gradient-to-r from-red-400 to-red-700 rounded-lg p-2 mx-5">
+                <span>Products </span>
                 <div></div>
             </div>
 
             <div class="product-form flex justify-center items-center" style="display: none;" id="product-form">
 
                 <form action="<?= URLROOT ?>/controller/Products.php"  method="POST" class="flex flex-col justify-cente bg-white w-96 h-64 px-10">
-
+                    <input type="hidden" name="type" value="add" >
                     <input type="text" name="productName" placeholder="product name : " class="my-3 bg-transparent border-b-2 text-black">
                     <input type="number" name="productPrice" placeholder="product price :" class="my-3 bg-transparent border-b-2 text-black">
                     <input type="text" name="productDescription" placeholder="product description : " class="my-3 bg-transparent border-b-2 text-black">
@@ -123,7 +128,7 @@
         <div class="flex flex-col">
         <div class="overflow-x-auto shadow-md sm:rounded-lg">
             <div class="inline-block min-w-full align-middle">
-                <div class="overflow-hidden ">
+                <div class="overflow-hidden">
                     <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
                         <thead class="bg-gray-100 dark:bg-gray-700">
                             <tr>
@@ -166,9 +171,15 @@
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><?= $Product["product_price"]?></td>
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><?= $Product["product_description"]?></td>
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><img src="<?= $Product["product_image"]?>" alt="product image"/></td>
-                                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline mx-5">Edit</a>
-                                    <a href="#" class="text-blue-600 dark:text-red-500 hover:underline">Remove</a>
+                                <td class="d-flex justify-content-around">
+
+                                    <form action="<?= URLROOT ?>/controller/Products.php" method="POST" class="flex flex-col">
+
+                                        <input type="submit" name="type" value="delete" class="text-red-500">
+                                        <input type="hidden" name="productid" value="<?php echo $Product['product_id'] ?>">
+
+                                    </form>
+                            
                                 </td>
                                 
                             </tr>

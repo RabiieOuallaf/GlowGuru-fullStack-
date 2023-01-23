@@ -20,7 +20,7 @@
         protected $db;
 
         public function __construct() {
-            $this->db = new Database;
+            $this->db = new Database();
         }
 
         public function AddProduct($Pname, $Pprice, $Pdescription, $Pimage) {
@@ -60,7 +60,9 @@
             
             $this->db->bind(":picture" , $picture);
 
-            if($this->db->execute()){
+            $updated = $this->db->execute();
+
+            if($updated){
                 return true;
             }else {
                 return false;

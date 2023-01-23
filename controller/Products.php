@@ -72,6 +72,7 @@
 
 
             if($this->productModel->updateProduct($productId,$productName,$ProductPrice,$ProductDescription,$ProductImage)){
+                redirect("/dashboard");
             }else {
                 die('something went wrong tani');
             }
@@ -84,7 +85,7 @@
             $productId = (int)trim($_POST['productid']);
 
             if(!$this->productModel->deleteProduct($productId)){
-                redirect("/dashbaord");
+                redirect("/dashboard");
             }else {
                 die('something went wrong akha');
             }
@@ -92,7 +93,7 @@
 
         public function displayProducts() {
 
-            $this->productModel = new Product();
+            
             return $this->productModel->DisplayProducts();
     
         }
@@ -100,6 +101,19 @@
         
     }
 
-    $init = new Products();
+    $init = new Products;
 
-    $init->addProduct();
+    switch($_POST["type"]){
+
+        case "add": 
+
+            $init->addProduct();
+            break;
+        case "delete":
+            $init->deleteProduct();
+            break;
+
+        case 'update':
+            $init->updateProduct();
+            break;
+    }
