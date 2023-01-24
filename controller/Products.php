@@ -105,13 +105,14 @@
             $ProductPrice = trim($_POST['ProductPrice']);
             $ProductDescription = trim($_POST['ProductDescription']);
             $ProductImage = trim($_POST['ProductImage']);
+            $ProductQuantity = $_POST['product_quantity'];
 
 
 
-            if($this->productModel->updateProduct($productId,$productName,$ProductPrice,$ProductDescription,$ProductImage)){
+            if($this->productModel->updateProduct($productId,$productName,$ProductPrice,$ProductDescription,$ProductImage,$ProductQuantity)){
                 redirect("/dashboard");
             }else {
-                die('something went wrong tani');
+                die('something went wrong');
             }
 
        }
@@ -124,7 +125,7 @@
             if(!$this->productModel->deleteProduct($productId)){
                 redirect("/dashboard");
             }else {
-                die('something went wrong akha');
+                die('something went wrong');
             }
         }
 

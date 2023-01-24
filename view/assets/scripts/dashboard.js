@@ -4,7 +4,6 @@ const addForm = document.getElementById("addForm");
 
 addForm.addEventListener("click" , _ => {
     
-    const container = document.createElement("div");
 
     container.classList.add("flex");
     container.classList.add("justify-center");

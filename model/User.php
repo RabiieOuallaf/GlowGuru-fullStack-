@@ -18,7 +18,8 @@
 
         public function Login($email, $password){
 
-            $this->db->query("SELECT * FROM admin WHERE admin_email = :email AND admin_password = :pwd");
+            $sql = "SELECT * FROM admin WHERE admin_email = :email AND admin_password = :pwd";
+            $this->db->query($sql);
             $this->db->bind(':email', $email);
             $this->db->bind(':pwd', $password);
 

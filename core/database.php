@@ -14,6 +14,7 @@
 
 
         public function __construct() {
+            
             $dsn = "mysql:host=".$this->host.";port=$this->port;dbname=".$this->db_name;
 
             $options = array(
