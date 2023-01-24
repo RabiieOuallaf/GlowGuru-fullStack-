@@ -1,4 +1,4 @@
-# Glowguru is a website for 
+# Glowguru is a website for displaying makeup products manipulated by the dashboard 
 
 ![alt text](https://media.discordapp.net/attachments/1016737697848635614/1067469910982283335/Screenshot_1.png?width=1260&height=544)
 
