@@ -17,6 +17,7 @@
         require_once "model/Product.php";
 
     }
+    
     class Products extends BaseController {
 
         protected $productModel;
@@ -61,7 +62,7 @@
 
             for ($i = 0; $i < $count; $i++) {
                 // sanitize post data
-                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
                 // init data
 
                 $data = [
@@ -69,17 +70,20 @@
                     "productName" => $_POST['productName'][$i],
                     "productPrice" => $_POST['productPrice'][$i],
                     "productDescription" => $_POST['productDescription'][$i],
-                    "productImage" => $_POST['productImage'][$i]
+                    "productImage" => $_POST['productImage'][$i],
+                    "productQuantity" => $_POST['product_quantity'][$i]
+      
 
                 ];
 
+                
                 $addPoruct = $this->productModel->addProduct($data);
 
                 if ($addPoruct) {
-                    // redirect to product page
+                    // redirect to product paaddge
                     redirect('/dashboard');
                 } else {
-                    die('ops');
+                    die('something went wrong');
                 }
                 
 

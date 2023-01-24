@@ -15,7 +15,7 @@
 
         }
 
-        public function login() {
+        public function admin() {
 
             $this->view('login');
 

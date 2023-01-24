@@ -25,12 +25,13 @@
 
         public function AddProduct($data) {
 
-            $sql = "INSERT INTO products(product_name,product_price,product_description,product_image) VALUES (:productName, :productPrice, :productDescription, :productImage)";
+            $sql = "INSERT INTO products(product_name,product_price,product_description,product_image,product_quantity) VALUES (:productName, :productPrice, :productDescription, :productImage , :productQuantity)";
             $this->db->query($sql);
             $this->db->bind(":productName", $data["productName"]);
             $this->db->bind(":productPrice", $data["productPrice"]);
             $this->db->bind(":productDescription", $data["productDescription"]);
             $this->db->bind(":productImage", $data["productImage"]);
+            $this->db->bind(":productQuantity" , $data["product_quantity"]);
 
             $row = $this->db->execute();
 
@@ -46,9 +47,9 @@
         }
 
         
-        public function updateProduct($id, $name, $price, $description, $picture){
+        public function updateProduct($id, $name, $price, $description, $picture, $quantity){
 
-            $this->db->query("UPDATE products SET product_name = :name ,product_price = :price, product_description = :description, product_image = :picture WHERE product_id = :id" );
+            $this->db->query("UPDATE products SET product_name = :name ,product_price = :price, product_description = :description, product_image = :picture , product_quantity = :productQuantity WHERE product_id = :id" );
 
             $this->db->bind(":id", $id);
 
@@ -59,6 +60,9 @@
             $this->db->bind(":description" , $description);
             
             $this->db->bind(":picture" , $picture);
+
+            $this->db->bind(":productQuantity" , $quantity);
+
 
             $updated = $this->db->execute();
 

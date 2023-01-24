@@ -14,10 +14,11 @@
 
         <form action="<?= URLROOT ?>/controller/Products.php" method="POST" class="flex flex-col justify-cente bg-white w-96 h-64 px-10">
             <input type="hidden" name="type" value="update">
-            <input type="number" name="ProductID">
+            <input type="number" name="ProductID" placeholder="Product ID :">
             <input type="text" name="ProductName" placeholder="product name : " class="my-3 bg-transparent border-b-2 text-black">
             <input type="number" name="ProductPrice" placeholder="product price :" class="my-3 bg-transparent border-b-2 text-black">
             <input type="text" name="ProductDescription" placeholder="product description : " class="my-3 bg-transparent border-b-2 text-black">
+            <input type="number" name="product_quantity" placeholder="product quantity : " class="my-3 bg-transparent border-b-2 text-black">
             <input type="text" name="ProductImage" placeholder="product image : " class="my-3 bg-transparent border-b-2 text-black">
             <input type="submit" class="text-center rounded-full bg-black text-white cursor-pointer">
             

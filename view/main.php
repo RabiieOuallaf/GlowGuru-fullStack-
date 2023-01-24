@@ -29,7 +29,7 @@
             <ul class="flex gap-5 text-neutral-700 font-serif text-sm">
 
                 <li class="cursor-pointer text-neutral-900 ease-out duration-300"><a href="/">Home</a></li>
-                <li class="cursor-pointer ease-out duration-300 hover:text-neutral-900"><a to="/shop">Shop</a> </li>
+                <li class="cursor-pointer ease-out duration-300 hover:text-neutral-900"><a href="/shop">Shop</a> </li>
                 <li class="cursor-pointer ease-out duration-300 hover:text-neutral-900">Contact us</li>
 
             </ul>
@@ -39,9 +39,7 @@
         <div class="nav-options">
 
             <i class="fa-solid fa-cart-shopping" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i>
-            <a href="/login"><i class="fa-solid fa-user" class="cursor-pointer hover:text-neutral-700 ease-out duration-300"></i></a>
-            <?php
-             var_dump($_SESSION)?>
+            
         </div>
 
     </section>
@@ -81,7 +79,7 @@
            <h3 class="font-semi font-serif">Premeuim makeup🌟</h3>
         </div>
 
-        <div class="products items-center mb-10">
+        <div class="products items-center mb-10 mx-20">
 
 
             <!-- Product  -->
@@ -135,10 +133,10 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase text-black">Resources</h2>
                     <ul class="text-gray-600 text-gray-400">
                         <li class="mb-4">
-                            <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                            <a href="https://flowbite.com/" class="hover:underline">linkedin</a>
                         </li>
                         <li>
-                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            <a href="https://tailwindcss.com/" class="hover:underline">Rabie</a>
                         </li>
                     </ul>
                 </div>
@@ -146,7 +144,7 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase text-black">Follow us</h2>
                     <ul class="text-gray-600 text-gray-400">
                         <li class="mb-4">
-                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                            <a href="https://github.com/RabiieOuallaf" class="hover:underline ">Github</a>
                         </li>
                         <li>
                             <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>

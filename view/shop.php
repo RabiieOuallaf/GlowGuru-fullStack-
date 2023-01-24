@@ -20,6 +20,7 @@
     <link href="<?= URLROOT ?>/view/assets/styles/main.css" rel="stylesheet" />
 </head>
 <body>
+    <div id="cursor"></div>
 
 <section class="shop mb-20">
 <section class="flex justify-around mt-3">
@@ -55,46 +56,48 @@
             <h2 class="header my-10 mx-7 font-semibold text-neutral-700 font-sans font-mono">All your makeup need in one place 💄</h2>
         </div>
 
-        <div class="products grid lg:grid-cols-4 gap-10 m-auto mx-5">
-
-            <!-- First product  -->
+        <div class="products w-full  gap-10 grid md:grid-cols-4" style="display: grid;  grid-template-columns:1fr 1fr 1fr 1fr">
             <?php forEach($Products as $Product ){ ?>
+
+            
+                <!-- First product  -->
 
             <div class="product">
 
-                <div class="product bg-zinc-200 product w-64 h-64 rounded-xl my-24">
+                <div class="product  bg-zinc-200 product w-64 h-64 rounded-xl my-24">
+                <div class="deals-image relative m-auto">
+                        <div>
+                            <i class="fa-regular fa-heart mx-5 mt-5" id="heart"></i> 
+                            <img src="<?= $Product['product_image'] ?>" alt="xbox control" class="m-auto w-32"> 
+                        </div>
 
-                    <div class="deals-image relative m-auto">
-                        <i class="fa-regular fa-heart mx-5 mt-5" id="heart"></i> 
-                        <img src="../assets/images/product2.png" alt="xbox control" class="m-auto w-32"> 
-                    </div>
-        
-                    <div class="deals-description flex justify-between m-auto mt-20" style="width: 90%;" >
-        
-                        <div class="deals-descirption-content font-mono" style="width: 70%;">
-    
-                            <h3 class=""><?= $Product["product_name"] ?></h3>
-    
-                        </div>
-    
-                        <div class="deals-price" style="width: 20%;">
-    
-                            <h4 class="text-grey font-semibold"><?= $Product["product_price"] ?></h4>
-                            
-                        </div>
-    
-                    </div>
-    
-                    <div class="button my-6 mx-3">
-                        <button class="border-2 border-stone-800 rounded-full px-3 py-1 hover:text-blue-700 hover:border-lime-800"><span class="font-mono text-sm">Add to cart</span></button>
-                    </div>
-                    
+                        <div class="deals-description flex justify-between m-auto mt-20" style="width: 90%;" >
+
+                            <div class="deals-descirption-content font-mono" style="width: 70%;">
+
+                                <h3 class=""><?= $Product["product_name"] ?></h3>
+
+                            </div>
+
+                            <div class="deals-price" style="width: 20%;">
+
+                                <h4 class="text-grey font-semibold"><?= $Product["product_price"] ?></h4>
+                                
+                            </div>
+
+                        </div>   
+            </div> 
                 </div>
-
             </div>
+                    
+                    
+            <?php }?>
+            
+        </div>
 
-            <?php }
-            ?>
+            
+
+        <script src="<?= URLROOT . '/view/assets/scripts/main.js'?>"></script>
 
     
 </body>

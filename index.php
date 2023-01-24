@@ -4,4 +4,4 @@
     
     // init core library 
 
-    $init = new Core();
+    $init = new Core;
