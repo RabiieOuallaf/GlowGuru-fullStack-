@@ -12,6 +12,7 @@ class Core {
     
     public function __construct() {
         $url = $this->getUrl();
+        var_dump($url);
 
 
         // look in controllers for first value
